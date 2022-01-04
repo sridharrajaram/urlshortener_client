@@ -8,7 +8,7 @@ function RedirectToLong() {
   const { short } = useParams();
 
   function redirect() {
-    fetch(`${UrlLink}/${short}`, {
+    fetch(`${UrlLink}/short`, {
       method: "GET",
     })
       .then((data) => data.json())
