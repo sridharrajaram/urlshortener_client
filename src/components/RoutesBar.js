@@ -11,13 +11,13 @@ import UrlDashboard from "./UrlDashboard.js";
 import UrlShortener from "./UrlShortener.js";
 import UrlTable from "./UrlTable.js";
 
-function RoutesBar({ loginState }) {
+function RoutesBar({ loginState, setLoginState, token, setToken, email, setEmail }) {
   return (
     <>
       <Routes>
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Forgot" element={<Forgot />} />
+        <Route path="/Login" element={<Login setLoginState={setLoginState}/>} />
+        <Route path="/Forgot" element={<Forgot email={email} setEmail={setEmail}/>} />
         <Route
           path="/retrieveAccount/:email/:token"
           element={<OpenedEmail />}
