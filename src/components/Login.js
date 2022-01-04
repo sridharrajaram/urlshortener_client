@@ -29,7 +29,7 @@ function Login({ setLoginState }) {
       },
     })
       .then((data) => data.json())
-      .then((userdata) => setMessage(userdata.message));
+      .then((userdata) => {setMessage(userdata.message);console.log(userdata.message)});
   }
 
   return (
